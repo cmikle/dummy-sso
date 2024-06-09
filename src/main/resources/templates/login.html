@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .callout {
+            position: relative;
+            margin: 0 0 1rem 0;
+            padding: 1rem;
+            border: 1px solid rgba(41, 29, 30, 0.25);
+            border-radius: 0;
+            background-color: white;
+            color: #291D1E;
+        }
+        .callout.warning {
+            background-color: #fffad9;
+            color: #291D1E;
+        }
+        .grid-x {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: horizontal;
+            -webkit-box-direction: normal;
+            -webkit-flex-flow: row wrap;
+            -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+        }
+        .align-center {
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+        .cell {
+            -webkit-box-flex: 0;
+            -webkit-flex: 0 0 auto;
+            -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+            min-height: 0px;
+            min-width: 0px;
+            width: 100%;
+        }
+        .large-4 { width: 33.33333%; }
+        .medium-6 { width: 50%; }
+        .small-12 { width: 100%; }
+    </style>
+    <style>@import "https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.2/css/bootstrap.min.css";</style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <title>Dummy SSO</title>
+</head>
+<body class="mb-5">
+    <div class="h-100 d-flex align-items-center justify-content-center">
+        <div class="grid-x align-center">
+            <div class="cell large-4 medium-6 small-12">
+                <div class="callout warning" data-closable>
+                    <h6>Bitte loggen Sie sich ab sofort mit Ihrem Windows-Kennwort ein, falls vorhanden.</h6>
+                </div>
+                <form action="/auth/realms/protocol/openid-connect/callback" method="post">
+                    <div class="form-group" style="margin-bottom: 10px">
+                        <label for="user">Windows-Benutzer</label>
+                        <input type="text" id="user" class="form-control" name="user" placeholder="username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary" name="button_name" value="Jetzt einloggen">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
